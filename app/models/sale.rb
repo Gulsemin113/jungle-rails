@@ -1,10 +1,5 @@
 class Sale < ActiveRecord::Base
 
-
-  def self.active
-    Sale.where("sales.starts_on <= ? AND sales.ends_on >= ?",
-      Date.current, Date.current).any?
-  end 
   def finished?
   ends_on < Date.current
   end
